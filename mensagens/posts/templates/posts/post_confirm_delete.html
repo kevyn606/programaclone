@@ -1,0 +1,22 @@
+<!-- posts/templates/posts/post_confirm_delete.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Deletar Mensagem</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'posts/styles.css' %}"
+    />
+  </head>
+  <body>
+    <h1>Deletar Mensagem</h1>
+    <p>Você tem certeza que deseja deletar a mensagem "{{ post.title }}"?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Sim</button>
+      <a href="{% url 'post_list' %}">Cancelar</a>
+    </form>
+  </body>
+</html>
